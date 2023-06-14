@@ -1,6 +1,8 @@
-import Head from "next/head";
+import Head from "./components/header.js";
+import Footer from "./components/footer.js";
 import Image from "next/image";
 import Link from "next/link";
+import "./globals.css";
 
 export default function Home() {
   return (
@@ -332,6 +334,7 @@ export default function Home() {
             </div>
           </div>
         </section>
+        <Footer/>
       </main>
     </>
   );
