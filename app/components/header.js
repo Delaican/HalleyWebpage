@@ -2,7 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-const Header = () => {
+const Header = ({ headerData }) => {
+  const { data: { menu, logo: { url } } } = headerData
   return (
     <header className="bg-[#F0F0F0] bg-opacity-80 relative">
       <nav className="container mx-auto px-6 py-2">
@@ -11,7 +12,7 @@ const Header = () => {
           <div>
             <a href="#">
               <Image
-                src="/images/halley_logo.png"
+                src={url}
                 alt="logo"
                 height={200}
                 width={200}
@@ -43,33 +44,23 @@ const Header = () => {
             className="lg:flex hidden justify-between absolute lg:top-0 top-28 lg:relative bg-[#F0F0F0] lg:bg-none w-full lg:w-auto left-0 p-6 lg:p-0 z-50"
           >
             <div className="lg:space-x-6 lg:flex-row flex-col flex font-medium">
-              <Link
-                href="/divulgacion"
-                className="hover:text-zinc-600 lg:mb-0 mb-8"
-              >
-                Divulgación
-              </Link>
-              <Link
-                href="/investigacion"
-                className="hover:text-zinc-600 lg:mb-0 mb-8"
-              >
-                Investigación
-              </Link>
-              <Link href="/blog" className="hover:text-zinc-600 lg:mb-0 mb-8">
-                Blog
-              </Link>
-              <Link
-                href="/nosotros"
-                className="hover:text-zinc-600 lg:mb-0 mb-8"
-              >
-                Nosotros
-              </Link>
-              <Link
-                href="/contacto"
-                className="hover:text-zinc-600 lg:mb-0 mb-8"
-              >
-                Contacto
-              </Link>
+              {menu.map((item, index) => {
+                const itemText = item.menutext[0]?.text
+                console.log(itemText)
+                const itemLink = item.menulink?.url
+
+                return (<Link
+                  key={index}
+                  href={itemLink}
+                  className="hover:text-zinc-600 lg:mb-0 mb-8"
+                >
+                  {itemText}
+
+
+                </Link>)
+              })
+              }
+
             </div>
             {/* <!-- search --> */}
             <div className="lg:ml-40 w-6">

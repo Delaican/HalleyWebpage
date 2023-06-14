@@ -36,6 +36,12 @@ const routes = [
 export const createClient = (config = {}) => {
   const client = prismic.createClient(repositoryName, {
     routes,
+    fetchOptions: {
+      next: {
+        tags: ["prismic"]
+      },
+      cache: "no-store"
+    },
     ...config,
   });
 
