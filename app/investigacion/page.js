@@ -12,103 +12,103 @@ export default function Investigacion() {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <main>
-                <section class="bg-[#3E5E75] text-[#F0F0F0]">
-                    <div class="container mx-auto px-6 py-16">
-                        <h2 class="text-center lg:text-6xl text-4xl font-semibold">
+                <section className="bg-[#3E5E75] text-[#F0F0F0]">
+                    <div className="container mx-auto px-6 py-16">
+                        <h2 className="text-center lg:text-6xl text-4xl font-semibold">
                             Investigación
                         </h2>
                     </div>
                 </section>
-                <section class="text-[#3E5E75] bg-[#F0F0F0] pb-24">
-                    <div class="container mx-auto px-6 py-6">
-                        <h4 class="text-center lg:text-5xl text-3xl my-16 font-light">
+                <section className="text-[#3E5E75] bg-[#F0F0F0] pb-24">
+                    <div className="container mx-auto px-6 py-6">
+                        <h4 className="text-center lg:text-5xl text-3xl my-16 font-light">
                             Proyectos
                         </h4>
-                        <div class="grid lg:grid-cols-4 mt-8 place-items-center">
-                            <div class="h-[284px] w-[232px] mb-8 rounded-lg drop-shadow-lg bg-white transform transition duration-500 hover:scale-105">
+                        <div className="grid lg:grid-cols-4 mt-8 place-items-center">
+                            <div className="h-[284px] w-[232px] mb-8 rounded-lg drop-shadow-lg bg-white transform transition duration-500 hover:scale-105">
                                 <a
                                     href="https://halley.uis.edu.co/fuego/"
                                     target="_blank"
                                     rel="noreferrer"
                                 >
                                     <div>
-                                        <div class="p-4">
+                                        <div className="p-4">
                                             <Image
                                                 src="/images/mute.jpg"
                                                 alt="mute"
                                                 width={200}
                                                 height={200}
-                                                class="h-[216px] w-[205px] object-contain"
+                                                className="h-[216px] w-[205px] object-contain"
                                             />
                                         </div>
                                     </div>
                                     <div>
-                                        <h3 class="ml-4 text-2xl font-semibold">MuTe</h3>
+                                        <h3 className="ml-4 text-2xl font-semibold">MuTe</h3>
                                     </div>
                                 </a>
                             </div>
-                            <div class="h-[284px] w-[232px] mb-8 rounded-lg drop-shadow-lg bg-white transform transition duration-500 hover:scale-105">
+                            <div className="h-[284px] w-[232px] mb-8 rounded-lg drop-shadow-lg bg-white transform transition duration-500 hover:scale-105">
                                 <Link
                                     href="https://lagoproject.net/"
                                     target="_blank"
                                     rel="noreferrer"
                                 >
                                     <div>
-                                        <div class="p-4">
+                                        <div className="p-4">
                                             <Image
                                                 src="/images/lago-logo.png"
                                                 alt="lago"
                                                 width={200}
                                                 height={200}
-                                                class="h-[216px] w-[205px] object-contain"
+                                                className="h-[216px] w-[205px] object-contain"
                                             />
                                         </div>
                                     </div>
                                     <div>
-                                        <h3 class="ml-4 text-2xl font-semibold">Lago-UIS</h3>
+                                        <h3 className="ml-4 text-2xl font-semibold">Lago-UIS</h3>
                                     </div>
                                 </Link>
                             </div>
-                            <div class="h-[284px] w-[232px] mb-8 rounded-lg drop-shadow-lg bg-white transform transition duration-500 hover:scale-105">
+                            <div className="h-[284px] w-[232px] mb-8 rounded-lg drop-shadow-lg bg-white transform transition duration-500 hover:scale-105">
                                 <a
                                     href="http://auger.uis.edu.co/"
                                     target="_blank"
                                     rel="noreferrer"
                                 >
                                     <div>
-                                        <div class="p-4">
+                                        <div className="p-4">
                                             <Image
                                                 src="/images/auger_logo.jpg"
                                                 alt="auger"
                                                 width={200}
                                                 height={200}
-                                                class="h-[216px] w-[205px] object-contain"
+                                                className="h-[216px] w-[205px] object-contain"
                                             />
                                         </div>
                                     </div>
                                     <div>
-                                        <h3 class="ml-4 text-2xl font-semibold">Auger-UIS</h3>
+                                        <h3 className="ml-4 text-2xl font-semibold">Auger-UIS</h3>
                                     </div>
                                 </a>
                             </div>
-                            <div class="h-[284px] w-[232px] mb-8 rounded-lg drop-shadow-lg bg-white transform transition duration-500 hover:scale-105">
+                            <div className="h-[284px] w-[232px] mb-8 rounded-lg drop-shadow-lg bg-white transform transition duration-500 hover:scale-105">
                                 <Link
                                     href="https://halley.uis.edu.co/astroparamo/"
                                     target="_blank"
                                 >
                                     <div>
-                                        <div class="p-4">
+                                        <div className="p-4">
                                             <Image
                                                 src="/images/astroparamo.png"
                                                 alt="astroparamo"
                                                 width={200}
                                                 height={200}
-                                                class="h-[216px] w-[205px] object-contain"
+                                                className="h-[216px] w-[205px] object-contain"
                                             />
                                         </div>
                                     </div>
                                     <div>
-                                        <h3 class="ml-4 text-2xl font-semibold">Astropáramo</h3>
+                                        <h3 className="ml-4 text-2xl font-semibold">Astropáramo</h3>
                                     </div>
                                 </Link>
                             </div>

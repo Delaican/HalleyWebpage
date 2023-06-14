@@ -11,126 +11,126 @@ export default function Blog() {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <main>
-                <section class="bg-[#3E5E75] text-[#F0F0F0]">
-                    <div class="container mx-auto px-6 py-16">
-                        <h2 class="text-center lg:text-6xl text-4xl font-semibold">Blog</h2>
+                <section className="bg-[#3E5E75] text-[#F0F0F0]">
+                    <div className="container mx-auto px-6 py-16">
+                        <h2 className="text-center lg:text-6xl text-4xl font-semibold">Blog</h2>
                     </div>
                 </section>
-                <section class="text-[#3E5E75] bg-[#F0F0F0] lg:pb-24">
-                    <div class="container mx-auto px-6 py-6">
-                        <h4 class="text-center lg:text-5xl text-3xl my-16 font-light">
+                <section className="text-[#3E5E75] bg-[#F0F0F0] lg:pb-24">
+                    <div className="container mx-auto px-6 py-6">
+                        <h4 className="text-center lg:text-5xl text-3xl my-16 font-light">
                             Publicaciones
                         </h4>
-                        <div class="grid lg:grid-cols-3 gap-16 place-items-center">
-                            <div class="lg:w-[390px] lg:h-[375px] w-full overflow-hidden rounded-lg hover:drop-shadow-lg transform transition duration-500 hover:scale-105">
+                        <div className="grid lg:grid-cols-3 gap-16 place-items-center">
+                            <div className="lg:w-[390px] lg:h-[375px] w-full overflow-hidden rounded-lg hover:drop-shadow-lg transform transition duration-500 hover:scale-105">
                                 <div>
                                     <Image
                                         src="/images/post1.jpg"
                                         alt="post1"
                                         width={200}
                                         height={200}
-                                        class="h-[220px] object-cover rounded-t-lg w-full"
+                                        className="h-[220px] object-cover rounded-t-lg w-full"
                                     />
                                 </div>
-                                <div class="bg-white text-black p-6">
-                                    <h3 class="font-semibold mt-0">Eclipse Lunar</h3>
-                                    <p class="mt-2">
+                                <div className="bg-white text-black p-6">
+                                    <h3 className="font-semibold mt-0">Eclipse Lunar</h3>
+                                    <p className="mt-2">
                                         Un eclipse lunar es un evento astronómico que sucede cuando
                                         la Tierra se interpone entre el Sol y la Luna...
                                     </p>
                                 </div>
                             </div>
-                            <div class="lg:w-[390px] lg:h-[375px] w-full overflow-hidden rounded-lg drop-shadow-lg transform transition duration-500 hover:scale-105">
+                            <div className="lg:w-[390px] lg:h-[375px] w-full overflow-hidden rounded-lg drop-shadow-lg transform transition duration-500 hover:scale-105">
                                 <div>
                                     <Image
                                         src="/images/post2.jpg"
                                         alt="post2"
                                         width={200}
                                         height={200}
-                                        class="h-[220px] object-cover rounded-t-lg w-full"
+                                        className="h-[220px] object-cover rounded-t-lg w-full"
                                     />
                                 </div>
-                                <div class="bg-white text-black p-6">
-                                    <h3 class="font-semibold mt-0">
+                                <div className="bg-white text-black p-6">
+                                    <h3 className="font-semibold mt-0">
                                         ¿Cómo nos dimos cuenta que no somos el centro del universo?
                                     </h3>
-                                    <p class="mt-2">
+                                    <p className="mt-2">
                                         Y una pregunta más importante es: ¿Por qué aún somos
                                         egocéntricos?
                                     </p>
                                 </div>
                             </div>
-                            <div class="lg:w-[390px] lg:h-[375px] w-full overflow-hidden rounded-lg drop-shadow-lg transform transition duration-500 hover:scale-105">
+                            <div className="lg:w-[390px] lg:h-[375px] w-full overflow-hidden rounded-lg drop-shadow-lg transform transition duration-500 hover:scale-105">
                                 <div>
                                     <Image
                                         src="/images/post3.jpg"
                                         alt="post3"
                                         width={200}
                                         height={200}
-                                        class="h-[220px] object-cover rounded-t-lg w-full"
+                                        className="h-[220px] object-cover rounded-t-lg w-full"
                                     />
                                 </div>
-                                <div class="bg-white text-black p-6">
-                                    <h3 class="font-semibold mt-0">
+                                <div className="bg-white text-black p-6">
+                                    <h3 className="font-semibold mt-0">
                                         Hipatia de Alejandría: la primera mujer astrónoma
                                     </h3>
-                                    <p class="mt-2">
+                                    <p className="mt-2">
                                         Confeccionó un planisferio celeste que permitía cartografiar
                                         diversos astros y diseñó un astrolabio...
                                     </p>
                                 </div>
                             </div>
-                            <div class="lg:w-[390px] lg:h-[375px] w-full overflow-hidden rounded-lg drop-shadow-lg transform transition duration-500 hover:scale-105">
+                            <div className="lg:w-[390px] lg:h-[375px] w-full overflow-hidden rounded-lg drop-shadow-lg transform transition duration-500 hover:scale-105">
                                 <div>
                                     <Image
                                         src="/images/post4.jpg"
                                         alt="post1"
                                         width={200}
                                         height={200}
-                                        class="h-[220px] object-cover rounded-t-lg w-full"
+                                        className="h-[220px] object-cover rounded-t-lg w-full"
                                     />
                                 </div>
-                                <div class="bg-white text-black p-6">
-                                    <h3 class="font-semibold mt-0">Lorem Ipsum</h3>
-                                    <p class="mt-2">
+                                <div className="bg-white text-black p-6">
+                                    <h3 className="font-semibold mt-0">Lorem Ipsum</h3>
+                                    <p className="mt-2">
                                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                                         do eiusmod tempor incididunt ut labore et dolore magna
                                         aliqua.
                                     </p>
                                 </div>
                             </div>
-                            <div class="lg:w-[390px] lg:h-[375px] w-full overflow-hidden rounded-lg drop-shadow-lg transform transition duration-500 hover:scale-105">
+                            <div className="lg:w-[390px] lg:h-[375px] w-full overflow-hidden rounded-lg drop-shadow-lg transform transition duration-500 hover:scale-105">
                                 <div>
                                     <Image
                                         src="/images/post5.jpg"
                                         alt="post2"
                                         width={200}
                                         height={200}
-                                        class="h-[220px] object-cover rounded-t-lg w-full"
+                                        className="h-[220px] object-cover rounded-t-lg w-full"
                                     />
                                 </div>
-                                <div class="bg-white text-black p-6">
-                                    <h3 class="font-semibold mt-0">Lorem Ipsum</h3>
-                                    <p class="mt-2">
+                                <div className="bg-white text-black p-6">
+                                    <h3 className="font-semibold mt-0">Lorem Ipsum</h3>
+                                    <p className="mt-2">
                                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                                         do eiusmod tempor incididunt ut labore et dolore magna
                                         aliqua.
                                     </p>
                                 </div>
                             </div>
-                            <div class="lg:w-[390px] lg:h-[375px] w-full overflow-hidden rounded-lg drop-shadow-lg transform transition duration-500 hover:scale-105">
+                            <div className="lg:w-[390px] lg:h-[375px] w-full overflow-hidden rounded-lg drop-shadow-lg transform transition duration-500 hover:scale-105">
                                 <div>
                                     <Image
                                         src="/images/post6.jpg"
                                         alt="post3"
                                         width={200}
                                         height={200}
-                                        class="h-[220px] object-cover rounded-t-lg w-full"
+                                        className="h-[220px] object-cover rounded-t-lg w-full"
                                     />
                                 </div>
-                                <div class="bg-white text-black p-6">
-                                    <h3 class="font-semibold mt-0">Lorem Ipsum</h3>
-                                    <p class="mt-2">
+                                <div className="bg-white text-black p-6">
+                                    <h3 className="font-semibold mt-0">Lorem Ipsum</h3>
+                                    <p className="mt-2">
                                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                                         do eiusmod tempor incididunt ut labore et dolore magna
                                         aliqua.
@@ -138,10 +138,10 @@ export default function Blog() {
                                 </div>
                             </div>
                         </div>
-                        <div class="mt-32 flex justify-center items-center mx-auto">
-                            <a href="#" class="mr-2">
+                        <div className="mt-32 flex justify-center items-center mx-auto">
+                            <a href="#" className="mr-2">
                                 <svg
-                                    class="w-6 h-6 text-[#F68B1F]"
+                                    className="w-6 h-6 text-[#F68B1F]"
                                     fill="none"
                                     stroke="currentColor"
                                     viewBox="0 0 24 24"
@@ -155,10 +155,10 @@ export default function Blog() {
                                     ></path>
                                 </svg>
                             </a>
-                            <p class="text-[#F68B1F] font-semibold text-lg ">1</p>
-                            <a href="#" class="ml-2">
+                            <p className="text-[#F68B1F] font-semibold text-lg ">1</p>
+                            <a href="#" className="ml-2">
                                 <svg
-                                    class="w-6 h-6 text-[#F68B1F]"
+                                    className="w-6 h-6 text-[#F68B1F]"
                                     fill="none"
                                     stroke="currentColor"
                                     viewBox="0 0 24 24"
