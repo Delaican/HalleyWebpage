@@ -1,0 +1,72 @@
+{
+  "id": "divulgacion",
+  "type": "SharedSlice",
+  "name": "Divulgacion",
+  "description": "Divulgacion",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "titulo": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Titulo",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "descripcion": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Descripcion",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "tarjeta_imagen": {
+          "type": "Image",
+          "config": {
+            "label": "Tarjeta Imagen",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "tarjeta_texto": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Tarjeta Texto",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "titulo_actividades": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Titulo Grilla",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        }
+      },
+      "items": {
+        "imagenes_actividades": {
+          "type": "Image",
+          "config": {
+            "label": "Imagenes Grilla",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      }
+    }
+  ]
+}

@@ -118,7 +118,7 @@ interface HomepageDocumentData {
  * Slice for *Homepage → Slice Zone*
  *
  */
-type HomepageDocumentDataSlicesSlice = never;
+type HomepageDocumentDataSlicesSlice = HeroSlice | DivulgacionSlice;
 /**
  * Homepage document from Prismic
  *
@@ -269,6 +269,167 @@ export type AllDocumentTypes =
   | HomepageDocument
   | OtraPaginaDocument
   | PageDocument;
+/**
+ * Primary content in Divulgacion → Primary
+ *
+ */
+interface DivulgacionSliceDefaultPrimary {
+  /**
+   * Titulo field in *Divulgacion → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: divulgacion.primary.titulo
+   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+   *
+   */
+  titulo: prismic.RichTextField;
+  /**
+   * Descripcion field in *Divulgacion → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: divulgacion.primary.descripcion
+   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+   *
+   */
+  descripcion: prismic.RichTextField;
+  /**
+   * Tarjeta Imagen field in *Divulgacion → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: divulgacion.primary.tarjeta_imagen
+   * - **Documentation**: https://prismic.io/docs/core-concepts/image
+   *
+   */
+  tarjeta_imagen: prismic.ImageField<never>;
+  /**
+   * Tarjeta Texto field in *Divulgacion → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: divulgacion.primary.tarjeta_texto
+   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+   *
+   */
+  tarjeta_texto: prismic.RichTextField;
+  /**
+   * Titulo Grilla field in *Divulgacion → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: divulgacion.primary.titulo_actividades
+   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+   *
+   */
+  titulo_actividades: prismic.RichTextField;
+}
+/**
+ * Item in Divulgacion → Items
+ *
+ */
+export interface DivulgacionSliceDefaultItem {
+  /**
+   * Imagenes Grilla field in *Divulgacion → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: divulgacion.items[].imagenes_actividades
+   * - **Documentation**: https://prismic.io/docs/core-concepts/image
+   *
+   */
+  imagenes_actividades: prismic.ImageField<never>;
+}
+/**
+ * Default variation for Divulgacion Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Default`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type DivulgacionSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<DivulgacionSliceDefaultPrimary>,
+  Simplify<DivulgacionSliceDefaultItem>
+>;
+/**
+ * Slice variation for *Divulgacion*
+ *
+ */
+type DivulgacionSliceVariation = DivulgacionSliceDefault;
+/**
+ * Divulgacion Shared Slice
+ *
+ * - **API ID**: `divulgacion`
+ * - **Description**: `Divulgacion`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type DivulgacionSlice = prismic.SharedSlice<
+  "divulgacion",
+  DivulgacionSliceVariation
+>;
+/**
+ * Primary content in Hero → Primary
+ *
+ */
+interface HeroSliceDefaultPrimary {
+  /**
+   * TestText field in *Hero → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.primary.testtext
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  testtext: prismic.KeyTextField;
+}
+/**
+ * Item in Hero → Items
+ *
+ */
+export interface HeroSliceDefaultItem {
+  /**
+   * HeroImage field in *Hero → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.items[].heroimage
+   * - **Documentation**: https://prismic.io/docs/core-concepts/image
+   *
+   */
+  heroimage: prismic.ImageField<never>;
+}
+/**
+ * Default variation for Hero Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Default`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type HeroSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<HeroSliceDefaultPrimary>,
+  Simplify<HeroSliceDefaultItem>
+>;
+/**
+ * Slice variation for *Hero*
+ *
+ */
+type HeroSliceVariation = HeroSliceDefault;
+/**
+ * Hero Shared Slice
+ *
+ * - **API ID**: `hero`
+ * - **Description**: `Hero`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -291,6 +452,16 @@ declare module "@prismicio/client" {
       PageDocumentDataSlicesSlice,
       PageDocument,
       AllDocumentTypes,
+      DivulgacionSliceDefaultPrimary,
+      DivulgacionSliceDefaultItem,
+      DivulgacionSliceDefault,
+      DivulgacionSliceVariation,
+      DivulgacionSlice,
+      HeroSliceDefaultPrimary,
+      HeroSliceDefaultItem,
+      HeroSliceDefault,
+      HeroSliceVariation,
+      HeroSlice,
     };
   }
 }

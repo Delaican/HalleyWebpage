@@ -46,7 +46,6 @@ const Header = ({ headerData }) => {
             <div className="lg:space-x-6 lg:flex-row flex-col flex font-medium">
               {menu.map((item, index) => {
                 const itemText = item.menutext[0]?.text
-                console.log(itemText)
                 const itemLink = item.menulink?.url
 
                 return (<Link
