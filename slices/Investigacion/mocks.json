@@ -1,0 +1,85 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"titulo": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Aute sit commodo ipsum cillum eu ad aliquip sunt dolore fugiat."
+						}
+					}
+				]
+			},
+			"descripcion": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Qui dolore commodo fugiat consequat nostrud reprehenderit ea esse eu nulla occaecat dolor. Consectetur aliqua ea proident cillum qui ipsum tempor."
+						}
+					}
+				]
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"tarjeta_imagen",
+						{
+							"__TYPE__": "ImageContent",
+							"origin": {
+								"id": "main",
+								"url": "https://images.unsplash.com/photo-1587613865763-4b8b0d19e8ab",
+								"width": 12288,
+								"height": 16384
+							},
+							"url": "https://images.unsplash.com/photo-1587613865763-4b8b0d19e8ab",
+							"width": 12288,
+							"height": 16384,
+							"edit": {
+								"zoom": 1,
+								"crop": {
+									"x": 0,
+									"y": 0
+								},
+								"background": "transparent"
+							},
+							"thumbnails": {}
+						}
+					],
+					[
+						"tarjeta_titulo",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Et est cillum elit ad esse nostrud tempor incididunt eu sit id ad ullamco ut excepteur. Culpa occaecat sunt reprehenderit qui nostrud pariatur minim. Cupidatat adipisicing laborum elit occaecat velit irure nostrud in consequat elit officia ullamco magna."
+									}
+								}
+							]
+						}
+					],
+					[
+						"tarjeta_link",
+						{
+							"__TYPE__": "LinkContent",
+							"value": {
+								"__TYPE__": "ExternalLink",
+								"url": "https://slicemachine.dev"
+							}
+						}
+					]
+				]
+			}
+		]
+	}
+]

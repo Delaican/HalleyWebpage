@@ -118,7 +118,10 @@ interface HomepageDocumentData {
  * Slice for *Homepage → Slice Zone*
  *
  */
-type HomepageDocumentDataSlicesSlice = HeroSlice | DivulgacionSlice;
+type HomepageDocumentDataSlicesSlice =
+  | HeroSlice
+  | DivulgacionSlice
+  | InvestigacionSlice;
 /**
  * Homepage document from Prismic
  *
@@ -132,73 +135,6 @@ export type HomepageDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<
     Simplify<HomepageDocumentData>,
     "homepage",
-    Lang
-  >;
-/** Content for Otra Pagina documents */
-interface OtraPaginaDocumentData {
-  /**
-   * Slice Zone field in *Otra Pagina*
-   *
-   * - **Field Type**: Slice Zone
-   * - **Placeholder**: *None*
-   * - **API ID Path**: otra_pagina.slices[]
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/core-concepts/slices
-   *
-   */
-  slices: prismic.SliceZone<OtraPaginaDocumentDataSlicesSlice>;
-  /**
-   * Meta Description field in *Otra Pagina*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: A brief summary of the page
-   * - **API ID Path**: otra_pagina.meta_description
-   * - **Tab**: SEO & Metadata
-   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
-   *
-   */
-  meta_description: prismic.RichTextField;
-  /**
-   * Meta Image field in *Otra Pagina*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: otra_pagina.meta_image
-   * - **Tab**: SEO & Metadata
-   * - **Documentation**: https://prismic.io/docs/core-concepts/image
-   *
-   */
-  meta_image: prismic.ImageField<never>;
-  /**
-   * Meta Title field in *Otra Pagina*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: A title of the page used for social media and search engines
-   * - **API ID Path**: otra_pagina.meta_title
-   * - **Tab**: SEO & Metadata
-   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-   *
-   */
-  meta_title: prismic.KeyTextField;
-}
-/**
- * Slice for *Otra Pagina → Slice Zone*
- *
- */
-type OtraPaginaDocumentDataSlicesSlice = never;
-/**
- * Otra Pagina document from Prismic
- *
- * - **API ID**: `otra_pagina`
- * - **Repeatable**: `true`
- * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
- *
- * @typeParam Lang - Language API ID of the document.
- */
-export type OtraPaginaDocument<Lang extends string = string> =
-  prismic.PrismicDocumentWithUID<
-    Simplify<OtraPaginaDocumentData>,
-    "otra_pagina",
     Lang
   >;
 /** Content for Page documents */
@@ -264,11 +200,7 @@ type PageDocumentDataSlicesSlice = never;
  */
 export type PageDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
-export type AllDocumentTypes =
-  | HeaderDocument
-  | HomepageDocument
-  | OtraPaginaDocument
-  | PageDocument;
+export type AllDocumentTypes = HeaderDocument | HomepageDocument | PageDocument;
 /**
  * Primary content in Divulgacion → Primary
  *
@@ -430,6 +362,98 @@ type HeroSliceVariation = HeroSliceDefault;
  *
  */
 export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
+/**
+ * Primary content in Investigacion → Primary
+ *
+ */
+interface InvestigacionSliceDefaultPrimary {
+  /**
+   * Titulo field in *Investigacion → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: investigacion.primary.titulo
+   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+   *
+   */
+  titulo: prismic.RichTextField;
+  /**
+   * Descripcion field in *Investigacion → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: investigacion.primary.descripcion
+   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+   *
+   */
+  descripcion: prismic.RichTextField;
+}
+/**
+ * Item in Investigacion → Items
+ *
+ */
+export interface InvestigacionSliceDefaultItem {
+  /**
+   * Tarjeta Imagen field in *Investigacion → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: investigacion.items[].tarjeta_imagen
+   * - **Documentation**: https://prismic.io/docs/core-concepts/image
+   *
+   */
+  tarjeta_imagen: prismic.ImageField<never>;
+  /**
+   * Tarjeta Titulo field in *Investigacion → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: investigacion.items[].tarjeta_titulo
+   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+   *
+   */
+  tarjeta_titulo: prismic.RichTextField;
+  /**
+   * Tarjeta Link field in *Investigacion → Items*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: investigacion.items[].tarjeta_link
+   * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+   *
+   */
+  tarjeta_link: prismic.LinkField;
+}
+/**
+ * Default variation for Investigacion Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Default`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type InvestigacionSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<InvestigacionSliceDefaultPrimary>,
+  Simplify<InvestigacionSliceDefaultItem>
+>;
+/**
+ * Slice variation for *Investigacion*
+ *
+ */
+type InvestigacionSliceVariation = InvestigacionSliceDefault;
+/**
+ * Investigacion Shared Slice
+ *
+ * - **API ID**: `investigacion`
+ * - **Description**: `Investigacion`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type InvestigacionSlice = prismic.SharedSlice<
+  "investigacion",
+  InvestigacionSliceVariation
+>;
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -445,9 +469,6 @@ declare module "@prismicio/client" {
       HomepageDocumentData,
       HomepageDocumentDataSlicesSlice,
       HomepageDocument,
-      OtraPaginaDocumentData,
-      OtraPaginaDocumentDataSlicesSlice,
-      OtraPaginaDocument,
       PageDocumentData,
       PageDocumentDataSlicesSlice,
       PageDocument,
@@ -462,6 +483,11 @@ declare module "@prismicio/client" {
       HeroSliceDefault,
       HeroSliceVariation,
       HeroSlice,
+      InvestigacionSliceDefaultPrimary,
+      InvestigacionSliceDefaultItem,
+      InvestigacionSliceDefault,
+      InvestigacionSliceVariation,
+      InvestigacionSlice,
     };
   }
 }

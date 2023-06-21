@@ -13,7 +13,8 @@
         "config": {
           "choices": {
             "hero": { "type": "SharedSlice" },
-            "divulgacion": { "type": "SharedSlice" }
+            "divulgacion": { "type": "SharedSlice" },
+            "investigacion": { "type": "SharedSlice" }
           }
         }
       }
