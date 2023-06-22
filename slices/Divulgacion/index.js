@@ -17,7 +17,7 @@ const Divulgacion = ({ slice }) => {
         <p className="text-center lg:w-3/5 mx-auto mt-8 text-sm lg:text-base">
           <PrismicRichText field={slice.primary.descripcion} />
         </p>
-        <div className="flex justify-around items-center mt-16">
+        <div className="flex justify-around items-center mt-8">
           <div className="hidden lg:block w-[540px] overflow-hidden rounded-lg hover:drop-shadow-2xl transform transition duration-500 hover:scale-105">
             <div>
               <PrismicNextImage field={slice.primary.tarjeta_imagen} className="h-72 object-cover rounded-t-lg w-full" />
@@ -36,7 +36,7 @@ const Divulgacion = ({ slice }) => {
             </div>
           </div>
         </div>
-        <div className="text-center mt-16 lg:mt-32">
+        <div className="text-center mt-8 lg:mt-32">
           <a href="divulgacion.html">
             <button className="bg-[#F68B1F] px-6 py-4 rounded-full font-semibold hover:opacity-90 ">
               Ver más

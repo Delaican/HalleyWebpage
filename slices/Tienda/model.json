@@ -1,0 +1,49 @@
+{
+  "id": "tienda",
+  "type": "SharedSlice",
+  "name": "Tienda",
+  "description": "Tienda",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "titulo": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Titulo",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "descripcion": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Descripcion",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "imagen": {
+          "type": "Image",
+          "config": { "label": "Imagen", "constraint": {}, "thumbnails": [] }
+        },
+        "imagen_link": {
+          "type": "Link",
+          "config": {
+            "label": "Imagen Link",
+            "placeholder": "",
+            "select": null
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

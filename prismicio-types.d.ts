@@ -122,7 +122,8 @@ type HomepageDocumentDataSlicesSlice =
   | HeroSlice
   | DivulgacionSlice
   | InvestigacionSlice
-  | BlogSlice;
+  | BlogSlice
+  | TiendaSlice;
 /**
  * Homepage document from Prismic
  *
@@ -547,6 +548,79 @@ export type InvestigacionSlice = prismic.SharedSlice<
   "investigacion",
   InvestigacionSliceVariation
 >;
+/**
+ * Primary content in Tienda → Primary
+ *
+ */
+interface TiendaSliceDefaultPrimary {
+  /**
+   * Titulo field in *Tienda → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: tienda.primary.titulo
+   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+   *
+   */
+  titulo: prismic.RichTextField;
+  /**
+   * Descripcion field in *Tienda → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: tienda.primary.descripcion
+   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+   *
+   */
+  descripcion: prismic.RichTextField;
+  /**
+   * Imagen field in *Tienda → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: tienda.primary.imagen
+   * - **Documentation**: https://prismic.io/docs/core-concepts/image
+   *
+   */
+  imagen: prismic.ImageField<never>;
+  /**
+   * Imagen Link field in *Tienda → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: tienda.primary.imagen_link
+   * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+   *
+   */
+  imagen_link: prismic.LinkField;
+}
+/**
+ * Default variation for Tienda Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Default`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type TiendaSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<TiendaSliceDefaultPrimary>,
+  never
+>;
+/**
+ * Slice variation for *Tienda*
+ *
+ */
+type TiendaSliceVariation = TiendaSliceDefault;
+/**
+ * Tienda Shared Slice
+ *
+ * - **API ID**: `tienda`
+ * - **Description**: `Tienda`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type TiendaSlice = prismic.SharedSlice<"tienda", TiendaSliceVariation>;
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -586,6 +660,10 @@ declare module "@prismicio/client" {
       InvestigacionSliceDefault,
       InvestigacionSliceVariation,
       InvestigacionSlice,
+      TiendaSliceDefaultPrimary,
+      TiendaSliceDefault,
+      TiendaSliceVariation,
+      TiendaSlice,
     };
   }
 }

@@ -15,7 +15,8 @@
             "hero": { "type": "SharedSlice" },
             "divulgacion": { "type": "SharedSlice" },
             "investigacion": { "type": "SharedSlice" },
-            "blog": { "type": "SharedSlice" }
+            "blog": { "type": "SharedSlice" },
+            "tienda": { "type": "SharedSlice" }
           }
         }
       }

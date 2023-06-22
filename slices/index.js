@@ -7,4 +7,5 @@ export const components = {
   divulgacion: dynamic(() => import("./Divulgacion")),
   hero: dynamic(() => import("./Hero")),
   investigacion: dynamic(() => import("./Investigacion")),
+  tienda: dynamic(() => import("./Tienda")),
 };

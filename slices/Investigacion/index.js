@@ -17,7 +17,7 @@ const Investigacion = ({ slice }) => {
         <div className="text-center lg:w-3/5 mx-auto mt-8 text-sm lg:text-base">
           <PrismicRichText field={slice.primary.descripcion} />
         </div>
-        <div className="grid grid-cols-1 lg:grid-cols-4 mt-16 place-items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-4 mt-8 place-items-center">
           {slice.items.map((tarjeta, index) =>
             <div key={index} className="h-[284px] w-[232px] mb-8 rounded-lg hover:drop-shadow-lg bg-white transform transition duration-500 hover:scale-105">
               <PrismicNextLink field={tarjeta.tarjeta_link}>
@@ -33,7 +33,7 @@ const Investigacion = ({ slice }) => {
             </div>
           )}
         </div>
-          <div className="text-center mt-16 lg:mt-32">
+          <div className="text-center mt-8 lg:mt-32">
             <a href="investigacion.html">
               <button className="bg-[#F68B1F] text-[#F0F0F0] px-6 py-4 rounded-full font-semibold hover:opacity-90 ">
                 Ver más

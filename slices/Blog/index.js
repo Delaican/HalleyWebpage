@@ -16,7 +16,7 @@ const Blog = ({ slice }) => {
         <div className="text-center lg:w-3/5 mx-auto mt-8 text-sm lg:text-base">
           <PrismicRichText field={slice.primary.descripcion} />
         </div>
-        <div className="grid lg:grid-cols-3 gap-16 mt-16 place-items-center">
+        <div className="grid lg:grid-cols-3 gap-16 mt-8 place-items-center">
           {slice.items.map((tarjeta, index) =>
             <div key={index} className="lg:w-[410px] lg:h-[375px] w-full overflow-hidden rounded-lg hover:drop-shadow-lg transform transition duration-500 hover:scale-105">
               <PrismicNextImage field={tarjeta.tarjeta_imagen} />
@@ -27,7 +27,7 @@ const Blog = ({ slice }) => {
             </div>
           )}
         </div>
-        <div className="text-center mt-16 lg:mt-32">
+        <div className="text-center mt-8 lg:mt-32">
           <a href="blog.html">
             <button className="bg-[#F68B1F] text-[#F0F0F0] px-6 py-4 rounded-full font-semibold hover:opacity-90 ">
               Ver más
