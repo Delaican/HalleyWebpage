@@ -1,0 +1,89 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"titulo": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Dolor minim aliquip laboris non non commodo reprehenderit veniam commodo eiusmod cillum sit consequat magna esse. Minim adipisicing fugiat Lorem cillum sint do. Fugiat voluptate dolore consequat."
+						}
+					}
+				]
+			},
+			"descripcion": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Laboris sunt consequat fugiat pariatur irure sit consectetur."
+						}
+					}
+				]
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"tarjeta_imagen",
+						{
+							"__TYPE__": "ImageContent",
+							"origin": {
+								"id": "main",
+								"url": "https://images.unsplash.com/photo-1504198070170-4ca53bb1c1fa",
+								"width": 2747,
+								"height": 4120
+							},
+							"url": "https://images.unsplash.com/photo-1504198070170-4ca53bb1c1fa",
+							"width": 2747,
+							"height": 4120,
+							"edit": {
+								"zoom": 1,
+								"crop": {
+									"x": 0,
+									"y": 0
+								},
+								"background": "transparent"
+							},
+							"thumbnails": {}
+						}
+					],
+					[
+						"tarjeta_titulo",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Officia non ullamco excepteur. Mollit magna non commodo nulla in sunt qui in exercitation ut consectetur aute. Eiusmod et aliquip adipisicing ullamco occaecat ullamco irure consequat tempor laboris nulla consequat proident occaecat."
+									}
+								}
+							]
+						}
+					],
+					[
+						"tarjeta_texto",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Labore exercitation id qui dolore eiusmod consectetur sunt minim dolor occaecat. Nulla laborum non quis voluptate sunt id aliqua commodo pariatur fugiat incididunt adipisicing sunt culpa."
+									}
+								}
+							]
+						}
+					]
+				]
+			}
+		]
+	}
+]

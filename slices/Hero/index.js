@@ -6,7 +6,7 @@ import { PrismicNextImage } from "@prismicio/next";
  * @param {HeroProps}
  */
 const Hero = ({ slice }) => {
-  console.log(slice.items)
+  
 
   return (
     <div className="bg-hero-pattern object-cover h-[642px] z-0 brightness-75">

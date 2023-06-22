@@ -121,7 +121,8 @@ interface HomepageDocumentData {
 type HomepageDocumentDataSlicesSlice =
   | HeroSlice
   | DivulgacionSlice
-  | InvestigacionSlice;
+  | InvestigacionSlice
+  | BlogSlice;
 /**
  * Homepage document from Prismic
  *
@@ -188,7 +189,10 @@ interface PageDocumentData {
  * Slice for *Page → Slice Zone*
  *
  */
-type PageDocumentDataSlicesSlice = never;
+type PageDocumentDataSlicesSlice =
+  | BlogSlice
+  | DivulgacionSlice
+  | InvestigacionSlice;
 /**
  * Page document from Prismic
  *
@@ -201,6 +205,95 @@ type PageDocumentDataSlicesSlice = never;
 export type PageDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
 export type AllDocumentTypes = HeaderDocument | HomepageDocument | PageDocument;
+/**
+ * Primary content in Blog → Primary
+ *
+ */
+interface BlogSliceDefaultPrimary {
+  /**
+   * Titulo field in *Blog → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog.primary.titulo
+   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+   *
+   */
+  titulo: prismic.RichTextField;
+  /**
+   * Descripcion field in *Blog → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog.primary.descripcion
+   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+   *
+   */
+  descripcion: prismic.RichTextField;
+}
+/**
+ * Item in Blog → Items
+ *
+ */
+export interface BlogSliceDefaultItem {
+  /**
+   * Tarjeta Imagen field in *Blog → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog.items[].tarjeta_imagen
+   * - **Documentation**: https://prismic.io/docs/core-concepts/image
+   *
+   */
+  tarjeta_imagen: prismic.ImageField<never>;
+  /**
+   * Tarjeta Titulo field in *Blog → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog.items[].tarjeta_titulo
+   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+   *
+   */
+  tarjeta_titulo: prismic.RichTextField;
+  /**
+   * Tarjeta Texto field in *Blog → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog.items[].tarjeta_texto
+   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+   *
+   */
+  tarjeta_texto: prismic.RichTextField;
+}
+/**
+ * Default variation for Blog Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Default`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type BlogSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<BlogSliceDefaultPrimary>,
+  Simplify<BlogSliceDefaultItem>
+>;
+/**
+ * Slice variation for *Blog*
+ *
+ */
+type BlogSliceVariation = BlogSliceDefault;
+/**
+ * Blog Shared Slice
+ *
+ * - **API ID**: `blog`
+ * - **Description**: `Blog`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type BlogSlice = prismic.SharedSlice<"blog", BlogSliceVariation>;
 /**
  * Primary content in Divulgacion → Primary
  *
@@ -473,6 +566,11 @@ declare module "@prismicio/client" {
       PageDocumentDataSlicesSlice,
       PageDocument,
       AllDocumentTypes,
+      BlogSliceDefaultPrimary,
+      BlogSliceDefaultItem,
+      BlogSliceDefault,
+      BlogSliceVariation,
+      BlogSlice,
       DivulgacionSliceDefaultPrimary,
       DivulgacionSliceDefaultItem,
       DivulgacionSliceDefault,

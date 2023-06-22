@@ -20,13 +20,6 @@ const Divulgacion = ({ slice }) => {
         <div className="flex justify-around items-center mt-16">
           <div className="hidden lg:block w-[540px] overflow-hidden rounded-lg hover:drop-shadow-2xl transform transition duration-500 hover:scale-105">
             <div>
-              {/* <Image
-                src="/images/post1.jpg"
-                alt="post1"
-                height={200}
-                width={200}
-                className="h-72 object-cover rounded-t-lg w-full"
-              /> */}
               <PrismicNextImage field={slice.primary.tarjeta_imagen} className="h-72 object-cover rounded-t-lg w-full" />
             </div>
             <div className="bg-[#F0F0F0] text-black p-6">
@@ -40,34 +33,6 @@ const Divulgacion = ({ slice }) => {
             <h4 className="text-center text-3xl mb-8"><PrismicRichText field={slice.primary.titulo_actividades} /></h4>
             <div className="grid grid-cols-2 gap-8 mt-4 transform transition duration-500 hover:scale-105">
               {slice.items.map((imagen, index) => <PrismicNextImage key={index} field={imagen.imagenes_actividades} className="h-48 w-48 object-cover rounded-lg hover:drop-shadow-lg" />)}
-              {/* <Image
-                src="/images/vecinos_amigos.jpg"
-                alt="vecinos_amigos"
-                height={200}
-                width={200}
-                className="h-48 w-48 object-cover rounded-lg hover:drop-shadow-lg"
-              />
-              <Image
-                src="/images/noches_astro.png"
-                alt="noches_astro"
-                height={200}
-                width={200}
-                className="h-48 w-48 object-cover rounded-lg hover:drop-shadow-lg"
-              />
-              <Image
-                src="/images/observatorio.PNG"
-                alt="observatorio"
-                height={200}
-                width={200}
-                className="h-48 w-48 object-cover rounded-lg hover:drop-shadow-lg"
-              />
-              <Image
-                src="/images/curso_astro.jpg"
-                alt="curso_astro"
-                height={200}
-                width={200}
-                className="h-48 w-48 object-cover rounded-lg hover:drop-shadow-lg"
-              /> */}
             </div>
           </div>
         </div>

@@ -1,16 +1,18 @@
+import { PrismicNextImage } from "@prismicio/next";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
 const Header = ({ headerData }) => {
-  const { data: { menu, logo: { url } } } = headerData
+  //const { data: { menu, logo: { url } } } = headerData
+  console.log(headerData.menu)
   return (
     <header className="bg-[#F0F0F0] bg-opacity-80 relative">
       <nav className="container mx-auto px-6 py-2">
         <div className="flex items-center justify-between">
           {/* <!-- logo --> */}
-          <div>
-            <a href="#">
+          <PrismicNextImage field={headerData.logo} />
+          {/* <a href="#">
               <Image
                 src={url}
                 alt="logo"
@@ -18,8 +20,7 @@ const Header = ({ headerData }) => {
                 width={200}
                 className="h-24 object-contain"
               />
-            </a>
-          </div>
+            </a> */}
           {/* <!-- mobile menu --> */}
           <div className="flex lg:hidden">
             <svg
@@ -40,29 +41,19 @@ const Header = ({ headerData }) => {
           </div>
           {/* <!-- menu items --> */}
           <div
-            id="menu"
             className="lg:flex hidden justify-between absolute lg:top-0 top-28 lg:relative bg-[#F0F0F0] lg:bg-none w-full lg:w-auto left-0 p-6 lg:p-0 z-50"
           >
             <div className="lg:space-x-6 lg:flex-row flex-col flex font-medium">
-              {menu.map((item, index) => {
-                const itemText = item.menutext[0]?.text
-                const itemLink = item.menulink?.url
-
-                return (<Link
-                  key={index}
-                  href={itemLink}
-                  className="hover:text-zinc-600 lg:mb-0 mb-8"
-                >
-                  {itemText}
-
-
-                </Link>)
+              {headerData.menu.map((item, index) => {
+                <PrismicNextLink key={index} field={item.menu.menulink}>
+                  <PrismicRichText field={item.menu.menutext} className="hover:text-zinc-600 lg:mb-0 mb-8"/>
+                </PrismicNextLink>
               })
               }
 
             </div>
             {/* <!-- search --> */}
-            <div className="lg:ml-40 w-6">
+            {/* <div className="lg:ml-40 w-6">
               <a href="#">
                 <svg
                   className="w-6 h-6"
@@ -79,7 +70,7 @@ const Header = ({ headerData }) => {
                   ></path>
                 </svg>
               </a>
-            </div>
+            </div> */}
           </div>
         </div>
       </nav>
