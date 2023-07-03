@@ -11,6 +11,10 @@
         "type": "Image",
         "config": { "label": "Logo", "constraint": {}, "thumbnails": [] }
       },
+      "logolink": {
+        "type": "Link",
+        "config": { "label": "LogoLink", "placeholder": "", "select": null }
+      },
       "menu": {
         "type": "Group",
         "config": {

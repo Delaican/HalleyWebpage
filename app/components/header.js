@@ -3,13 +3,15 @@ import { PrismicRichText } from "@prismicio/react";
 import React from "react";
 
 const Header = ({ headerData }) => {
-  headerData.data.menu.map((item) => {console.log(item.menulink)})
+
   return (
     <header className="bg-[#F0F0F0] bg-opacity-80 relative">
       <nav className="container mx-auto px-6 py-2">
         <div className="flex items-center justify-between">
           {/* <!-- logo --> */}
-          <PrismicNextImage field={headerData.data.logo} className="h-24 w-24 object-contain" />
+          <PrismicNextLink field={headerData.data.logolink}>
+            <PrismicNextImage field={headerData.data.logo} className="h-24 w-24 object-contain" />
+          </PrismicNextLink>
           {/* <!-- mobile menu --> */}
           <div className="flex lg:hidden">
             <svg
@@ -34,6 +36,11 @@ const Header = ({ headerData }) => {
           >
             <div className="lg:space-x-6 lg:flex-row flex-col flex font-medium">
               {headerData.data.menu.map((item, index) =>
+                // <a key={index} href={item.menulink.slug}>
+                //    <div className="hover:text-zinc-600 lg:mb-0 mb-8">
+                //      <PrismicRichText field={item.menutext} />
+                //    </div>
+                // </a>
                 <PrismicNextLink key={index} field={item.menulink}>
                   <div className="hover:text-zinc-600 lg:mb-0 mb-8">
                     <PrismicRichText field={item.menutext} />

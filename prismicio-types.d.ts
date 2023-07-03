@@ -19,6 +19,17 @@ interface HeaderDocumentData {
    */
   logo: prismic.ImageField<never>;
   /**
+   * LogoLink field in *Header*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: header.logolink
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+   *
+   */
+  logolink: prismic.LinkField;
+  /**
    * Menu field in *Header*
    *
    * - **Field Type**: Group

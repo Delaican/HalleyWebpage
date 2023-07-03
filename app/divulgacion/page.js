@@ -6,7 +6,7 @@ import { components } from '../../slices'
 export default async function Divulgacion() {
     const client = createClient();
 
-    const page = await client.getByUID('page','page')
+    const page = await client.getByUID('page','divulgacion')
 
     return (
         <>
