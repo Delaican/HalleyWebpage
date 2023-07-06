@@ -14,7 +14,8 @@
           "choices": {
             "blog": { "type": "SharedSlice" },
             "divulgacion": { "type": "SharedSlice" },
-            "investigacion": { "type": "SharedSlice" }
+            "investigacion": { "type": "SharedSlice" },
+            "vecinosy_amigos": { "type": "SharedSlice" }
           }
         }
       }

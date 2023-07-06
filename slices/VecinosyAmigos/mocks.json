@@ -9,7 +9,7 @@
 					{
 						"type": "paragraph",
 						"content": {
-							"text": "Dolor minim aliquip laboris non non commodo reprehenderit veniam commodo eiusmod cillum sit consequat magna esse. Minim adipisicing fugiat Lorem cillum sint do. Fugiat voluptate dolore consequat."
+							"text": "Nisi do nisi pariatur commodo fugiat consectetur aliquip quis quis. Incididunt aute magna voluptate ad ex magna adipisicing nisi occaecat tempor."
 						}
 					}
 				]
@@ -20,7 +20,7 @@
 					{
 						"type": "paragraph",
 						"content": {
-							"text": "Laboris sunt consequat fugiat pariatur irure sit consectetur."
+							"text": "Dolore quis ullamco officia consectetur in nulla exercitation. Do eu duis est anim in excepteur dolore proident nostrud. Excepteur non id aute."
 						}
 					}
 				]
@@ -33,15 +33,16 @@
 					[
 						"tarjeta_imagen",
 						{
+							"__TYPE__": "ImageContent",
 							"origin": {
 								"id": "main",
-								"url": "https://images.unsplash.com/photo-1504198070170-4ca53bb1c1fa",
-								"width": 2747,
-								"height": 4120
+								"url": "https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2",
+								"width": 3648,
+								"height": 4560
 							},
-							"url": "https://images.unsplash.com/photo-1504198070170-4ca53bb1c1fa",
-							"width": 2747,
-							"height": 4120,
+							"url": "https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2",
+							"width": 3648,
+							"height": 4560,
 							"edit": {
 								"zoom": 1,
 								"crop": {
@@ -50,9 +51,6 @@
 								},
 								"background": "transparent"
 							},
-							"credits": null,
-							"alt": null,
-							"__TYPE__": "ImageContent",
 							"thumbnails": {}
 						}
 					],
@@ -64,7 +62,7 @@
 								{
 									"type": "paragraph",
 									"content": {
-										"text": "Officia non ullamco excepteur. Mollit magna non commodo nulla in sunt qui in exercitation ut consectetur aute. Eiusmod et aliquip adipisicing ullamco occaecat ullamco irure consequat tempor laboris nulla consequat proident occaecat."
+										"text": "Aliquip sint duis quis eiusmod. Sunt aliquip quis amet dolor sunt in pariatur."
 									}
 								}
 							]
@@ -78,7 +76,21 @@
 								{
 									"type": "paragraph",
 									"content": {
-										"text": "Labore exercitation id qui dolore eiusmod consectetur sunt minim dolor occaecat. Nulla laborum non quis voluptate sunt id aliqua commodo pariatur fugiat incididunt adipisicing sunt culpa."
+										"text": "Duis elit laborum velit non."
+									}
+								}
+							]
+						}
+					],
+					[
+						"tarjeta_subtexto",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Eu consectetur minim aute sit ut aliqua eiusmod nisi adipisicing id fugiat in minim officia occaecat."
 									}
 								}
 							]

@@ -11,12 +11,7 @@
       "version": "initial",
       "description": "Default",
       "imageUrl": "",
-      "primary": {
-        "testtext": {
-          "type": "Text",
-          "config": { "label": "TestText", "placeholder": "" }
-        }
-      },
+      "primary": {},
       "items": {
         "heroimage": {
           "type": "Image",

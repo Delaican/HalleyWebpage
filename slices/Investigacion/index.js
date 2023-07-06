@@ -1,6 +1,5 @@
 import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import { PrismicRichText } from "@prismicio/react";
-import Image from "next/image";
 
 /**
  * @typedef {import("@prismicio/client").Content.InvestigacionSlice} InvestigacionSlice
@@ -21,7 +20,7 @@ const Investigacion = ({ slice }) => {
           {slice.items.map((tarjeta, index) =>
             <div key={index} className="h-[284px] w-[232px] mb-8 rounded-lg hover:drop-shadow-lg bg-white transform transition duration-500 hover:scale-105">
               <PrismicNextLink field={tarjeta.tarjeta_link}>
-              <div>
+                <div>
                   <div className="p-4">
                     <PrismicNextImage field={tarjeta.tarjeta_imagen} className="h-[216px] w-[205px] object-contain" />
                   </div>
@@ -33,14 +32,7 @@ const Investigacion = ({ slice }) => {
             </div>
           )}
         </div>
-          <div className="text-center mt-8 lg:mt-32">
-            <a href="investigacion.html">
-              <button className="bg-[#F68B1F] text-[#F0F0F0] px-6 py-4 rounded-full font-semibold hover:opacity-90 ">
-                Ver más
-              </button>
-            </a>
-          </div>
-        </div>
+      </div>
     </section>
   );
 };

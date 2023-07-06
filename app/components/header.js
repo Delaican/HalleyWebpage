@@ -36,11 +36,6 @@ const Header = ({ headerData }) => {
           >
             <div className="lg:space-x-6 lg:flex-row flex-col flex font-medium">
               {headerData.data.menu.map((item, index) =>
-                // <a key={index} href={item.menulink.slug}>
-                //    <div className="hover:text-zinc-600 lg:mb-0 mb-8">
-                //      <PrismicRichText field={item.menutext} />
-                //    </div>
-                // </a>
                 <PrismicNextLink key={index} field={item.menulink}>
                   <div className="hover:text-zinc-600 lg:mb-0 mb-8">
                     <PrismicRichText field={item.menutext} />

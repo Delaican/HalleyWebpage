@@ -1,8 +1,8 @@
 {
-  "id": "divulgacion",
+  "id": "vecinosy_amigos",
   "type": "SharedSlice",
-  "name": "Divulgacion",
-  "description": "Divulgacion",
+  "name": "VecinosyAmigos",
+  "description": "VecinosyAmigos",
   "variations": [
     {
       "id": "default",
@@ -29,13 +29,24 @@
             "allowTargetBlank": true,
             "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
           }
-        },
+        }
+      },
+      "items": {
         "tarjeta_imagen": {
           "type": "Image",
           "config": {
             "label": "Tarjeta Imagen",
             "constraint": {},
             "thumbnails": []
+          }
+        },
+        "tarjeta_titulo": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Tarjeta Titulo",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
           }
         },
         "tarjeta_texto": {
@@ -47,37 +58,10 @@
             "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
           }
         },
-        "titulo_actividades": {
+        "tarjeta_subtexto": {
           "type": "StructuredText",
           "config": {
-            "label": "Titulo Grilla",
-            "placeholder": "",
-            "allowTargetBlank": true,
-            "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
-          }
-        }
-      },
-      "items": {
-        "imagenes_actividades": {
-          "type": "Image",
-          "config": {
-            "label": "Imagenes Grilla",
-            "constraint": {},
-            "thumbnails": []
-          }
-        },
-        "imagen_link": {
-          "type": "Link",
-          "config": {
-            "label": "Imagen Link",
-            "placeholder": "",
-            "select": null
-          }
-        },
-        "imagen_titulo": {
-          "type": "StructuredText",
-          "config": {
-            "label": "Imagen Titulo",
+            "label": "Tarjeta Subtexto",
             "placeholder": "",
             "allowTargetBlank": true,
             "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"

@@ -204,7 +204,8 @@ interface PageDocumentData {
 type PageDocumentDataSlicesSlice =
   | BlogSlice
   | DivulgacionSlice
-  | InvestigacionSlice;
+  | InvestigacionSlice
+  | VecinosyAmigosSlice;
 /**
  * Page document from Prismic
  *
@@ -377,6 +378,26 @@ export interface DivulgacionSliceDefaultItem {
    *
    */
   imagenes_actividades: prismic.ImageField<never>;
+  /**
+   * Imagen Link field in *Divulgacion → Items*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: divulgacion.items[].imagen_link
+   * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+   *
+   */
+  imagen_link: prismic.LinkField;
+  /**
+   * Imagen Titulo field in *Divulgacion → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: divulgacion.items[].imagen_titulo
+   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+   *
+   */
+  imagen_titulo: prismic.RichTextField;
 }
 /**
  * Default variation for Divulgacion Slice
@@ -409,22 +430,6 @@ export type DivulgacionSlice = prismic.SharedSlice<
   DivulgacionSliceVariation
 >;
 /**
- * Primary content in Hero → Primary
- *
- */
-interface HeroSliceDefaultPrimary {
-  /**
-   * TestText field in *Hero → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: hero.primary.testtext
-   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-   *
-   */
-  testtext: prismic.KeyTextField;
-}
-/**
  * Item in Hero → Items
  *
  */
@@ -450,7 +455,7 @@ export interface HeroSliceDefaultItem {
  */
 export type HeroSliceDefault = prismic.SharedSliceVariation<
   "default",
-  Simplify<HeroSliceDefaultPrimary>,
+  Record<string, never>,
   Simplify<HeroSliceDefaultItem>
 >;
 /**
@@ -632,6 +637,108 @@ type TiendaSliceVariation = TiendaSliceDefault;
  *
  */
 export type TiendaSlice = prismic.SharedSlice<"tienda", TiendaSliceVariation>;
+/**
+ * Primary content in VecinosyAmigos → Primary
+ *
+ */
+interface VecinosyAmigosSliceDefaultPrimary {
+  /**
+   * Titulo field in *VecinosyAmigos → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: vecinosy_amigos.primary.titulo
+   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+   *
+   */
+  titulo: prismic.RichTextField;
+  /**
+   * Descripcion field in *VecinosyAmigos → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: vecinosy_amigos.primary.descripcion
+   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+   *
+   */
+  descripcion: prismic.RichTextField;
+}
+/**
+ * Item in VecinosyAmigos → Items
+ *
+ */
+export interface VecinosyAmigosSliceDefaultItem {
+  /**
+   * Tarjeta Imagen field in *VecinosyAmigos → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: vecinosy_amigos.items[].tarjeta_imagen
+   * - **Documentation**: https://prismic.io/docs/core-concepts/image
+   *
+   */
+  tarjeta_imagen: prismic.ImageField<never>;
+  /**
+   * Tarjeta Titulo field in *VecinosyAmigos → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: vecinosy_amigos.items[].tarjeta_titulo
+   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+   *
+   */
+  tarjeta_titulo: prismic.RichTextField;
+  /**
+   * Tarjeta Texto field in *VecinosyAmigos → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: vecinosy_amigos.items[].tarjeta_texto
+   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+   *
+   */
+  tarjeta_texto: prismic.RichTextField;
+  /**
+   * Tarjeta Subtexto field in *VecinosyAmigos → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: vecinosy_amigos.items[].tarjeta_subtexto
+   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+   *
+   */
+  tarjeta_subtexto: prismic.RichTextField;
+}
+/**
+ * Default variation for VecinosyAmigos Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Default`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type VecinosyAmigosSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<VecinosyAmigosSliceDefaultPrimary>,
+  Simplify<VecinosyAmigosSliceDefaultItem>
+>;
+/**
+ * Slice variation for *VecinosyAmigos*
+ *
+ */
+type VecinosyAmigosSliceVariation = VecinosyAmigosSliceDefault;
+/**
+ * VecinosyAmigos Shared Slice
+ *
+ * - **API ID**: `vecinosy_amigos`
+ * - **Description**: `VecinosyAmigos`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type VecinosyAmigosSlice = prismic.SharedSlice<
+  "vecinosy_amigos",
+  VecinosyAmigosSliceVariation
+>;
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -661,7 +768,6 @@ declare module "@prismicio/client" {
       DivulgacionSliceDefault,
       DivulgacionSliceVariation,
       DivulgacionSlice,
-      HeroSliceDefaultPrimary,
       HeroSliceDefaultItem,
       HeroSliceDefault,
       HeroSliceVariation,
@@ -675,6 +781,11 @@ declare module "@prismicio/client" {
       TiendaSliceDefault,
       TiendaSliceVariation,
       TiendaSlice,
+      VecinosyAmigosSliceDefaultPrimary,
+      VecinosyAmigosSliceDefaultItem,
+      VecinosyAmigosSliceDefault,
+      VecinosyAmigosSliceVariation,
+      VecinosyAmigosSlice,
     };
   }
 }

@@ -8,4 +8,5 @@ export const components = {
   hero: dynamic(() => import("./Hero")),
   investigacion: dynamic(() => import("./Investigacion")),
   tienda: dynamic(() => import("./Tienda")),
+  vecinosy_amigos: dynamic(() => import("./VecinosyAmigos")),
 };
