@@ -18,9 +18,7 @@ const Divulgacion = ({ slice }) => {
         </p>
         <div className="flex justify-around items-center mt-8">
           <div className="hidden lg:block w-[540px] overflow-hidden rounded-lg hover:drop-shadow-2xl transform transition duration-500 hover:scale-105">
-            <div className="h-72 object-cover rounded-t-lg w-full" >
-              <PrismicNextImage field={slice.primary.tarjeta_imagen} />
-            </div>
+            <PrismicNextImage field={slice.primary.tarjeta_imagen} className="h-72 object-cover rounded-t-lg w-full" />
             <div className="bg-[#F0F0F0] text-black p-6">
               <h3 className="text-2xl font-semibold mt-4">Eclipse Lunar</h3>
               <p className="my-4">

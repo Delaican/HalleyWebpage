@@ -1,20 +1,35 @@
-import { PrismicNextImage } from "@prismicio/next";
+'use client'
 
 /**
  * @typedef {import("@prismicio/client").Content.HeroSlice} HeroSlice
  * @typedef {import("@prismicio/react").SliceComponentProps<HeroSlice>} HeroProps
  * @param {HeroProps}
  */
+
+import { useCallback } from "react";
+import { PrismicNextImage } from "@prismicio/next";
+import useEmblaCarousel from 'embla-carousel-react'
+
 const Hero = ({ slice }) => {
-  
+  const [emblaRef, emblaApi] = useEmblaCarousel()
+
+  const scrollPrev = useCallback(() => {
+    if (emblaApi) emblaApi.scrollPrev()
+  }, [emblaApi])
+
+  const scrollNext = useCallback(() => {
+    if (emblaApi) emblaApi.scrollNext()
+  }, [emblaApi])
 
   return (
     <div className="bg-hero-pattern object-cover h-[642px] z-0 brightness-75">
-      <div className="flex">
-        {slice.items.map((imagen, index) => <div key={index} className="w-12 h-12">
-          <PrismicNextImage field={imagen.heroimage} />
+      <div className="overflow-hidden" ref={emblaRef}>
+        <div className="flex">
+          {slice.items.map((imagen, index) => <div key={index} className="min-w-0 flex-[0_0_100%]">
+            <PrismicNextImage field={imagen.heroimage} className="object-cover block w-full h-72" />
+          </div>
+          )}
         </div>
-        )}
       </div>
 
       {/* <!-- botones --> */}
@@ -22,6 +37,7 @@ const Hero = ({ slice }) => {
         <button
           type="button"
           className="text-[#3E5E75] bg-white hover:opacity-80 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center"
+          onClick={scrollPrev}
         >
           <svg
             className="w-4 h-4 m-2"
@@ -41,6 +57,7 @@ const Hero = ({ slice }) => {
         <button
           type="button"
           className="text-[#3E5E75] bg-white hover:opacity-80 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center"
+          onClick={scrollNext}
         >
           <svg
             className="w-4 h-4 m-2"
