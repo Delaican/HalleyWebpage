@@ -33,9 +33,9 @@ const Divulgacion = ({ slice }) => {
             <div className="grid grid-cols-2 gap-8 mt-4 ">
               {slice.items.map((imagen, index) =>
                 <PrismicNextLink key={index} field={imagen.imagen_link} className="transform transition duration-500 hover:scale-105" >
-                    <div className="p-4">
-                      <PrismicNextImage field={imagen.imagenes_actividades} className="h-48 w-48 object-cover rounded-lg hover:drop-shadow-lg" />
-                    </div>
+                  <div className="p-4">
+                    <PrismicNextImage field={imagen.imagenes_actividades} className="h-48 w-48 object-cover rounded-lg hover:drop-shadow-lg" />
+                  </div>
                   <div>
                     <h3 className="ml-4 text-2xl"><PrismicRichText field={imagen.imagen_titulo} /></h3>
                   </div>
