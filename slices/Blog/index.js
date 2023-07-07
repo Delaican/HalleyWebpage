@@ -19,10 +19,10 @@ const Blog = ({ slice }) => {
         </div>
         <div className="grid lg:grid-cols-3 gap-16 mt-8 place-items-center">
           {slice.items.map((tarjeta, index) =>
-            <div key={index} className="lg:w-[410px] lg:h-[375px] w-full overflow-hidden rounded-lg hover:drop-shadow-lg transform transition duration-500 hover:scale-105">
-              <PrismicNextImage field={tarjeta.tarjeta_imagen} />
-              <div className="bg-[#F0F0F0] text-black p-4">
-                <h3 className="font-semibold mt-0"><PrismicRichText field={tarjeta.tarjeta_titulo} /></h3>
+            <div key={index} className="lg:w-[410px] lg:h-[375px] w-full overflow-hidden hover:drop-shadow-lg transform transition duration-500 hover:scale-105">
+              <PrismicNextImage field={tarjeta.tarjeta_imagen} className="h-[220px] object-cover rounded-t-lg w-full"/>
+              <div className="bg-[#F0F0F0] rounded-b-lg text-black p-4">
+                <h3 className="font-semibold"><PrismicRichText field={tarjeta.tarjeta_titulo} /></h3>
                 <PrismicRichText field={tarjeta.tarjeta_texto} />
               </div>
             </div>

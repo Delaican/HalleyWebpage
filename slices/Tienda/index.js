@@ -16,15 +16,9 @@ const Tienda = ({ slice }) => {
         <p className="text-center w-3/5 mx-auto mt-8">
           <PrismicRichText field={slice.primary.descripcion} />
         </p>
-        <PrismicNextLink field={slice.primary.imagen_link} className="my-16 flex justify-center items-center w-screen">
+        <PrismicNextLink field={slice.primary.imagen_link} className="my-16 flex justify-center items-center">
           <PrismicNextImage field={slice.primary.imagen} />
         </PrismicNextLink>
-        {/* <Image
-                  src="/images/store.jpg"
-                  alt="tienda"
-                  height={200}
-                  width={200}
-                /> */}
       </div>
     </section >
   );

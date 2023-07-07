@@ -69,6 +69,17 @@
 						}
 					}
 				]
+			},
+			"tarjeta_titulo": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Ut laboris occaecat nisi exercitation sunt duis aliqua. Et esse nulla fugiat veniam excepteur excepteur nisi culpa ea consectetur pariatur sit exercitation. Exercitation nostrud nostrud fugiat nisi aute ut reprehenderit sint dolore labore voluptate mollit velit consequat proident."
+						}
+					}
+				]
 			}
 		},
 		"items": [

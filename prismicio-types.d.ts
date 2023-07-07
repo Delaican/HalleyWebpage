@@ -343,6 +343,16 @@ interface DivulgacionSliceDefaultPrimary {
    */
   tarjeta_imagen: prismic.ImageField<never>;
   /**
+   * Tarjeta Titulo field in *Divulgacion → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: divulgacion.primary.tarjeta_titulo
+   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+   *
+   */
+  tarjeta_titulo: prismic.RichTextField;
+  /**
    * Tarjeta Texto field in *Divulgacion → Primary*
    *
    * - **Field Type**: Rich Text
