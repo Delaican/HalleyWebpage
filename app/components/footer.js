@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <footer className="flex bg-[#3E5E75] text-[#F0F0F0]">
       <div className="container mx-auto">
-        <div className="lg:flex justify-center center items-center lg:w-4/5 mx-auto">
+        {/* <div className="lg:flex justify-center center items-center lg:w-4/5 mx-auto">
           <div className="lg:bg-[#69CEDF] px-4 lg:px-20 py-16 rounded-lg font-semibold lg:mt-28 lg:flex">
             <h3 className="text-2xl lg:text-4xl font-bold lg:w-2/5">
               Suscríbete para recibir noticias y artículos
@@ -23,7 +23,7 @@ const Footer = () => {
               </div>
             </form>
           </div>
-        </div>
+        </div> */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-16 mx-auto justify-center items-center w-4/5 lg:py-8 text-sm lg:text-base">
           <div>
             <p className="font-bold">Correo</p>

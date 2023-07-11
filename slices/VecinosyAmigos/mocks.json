@@ -33,7 +33,6 @@
 					[
 						"tarjeta_imagen",
 						{
-							"__TYPE__": "ImageContent",
 							"origin": {
 								"id": "main",
 								"url": "https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2",
@@ -51,6 +50,9 @@
 								},
 								"background": "transparent"
 							},
+							"credits": null,
+							"alt": null,
+							"__TYPE__": "ImageContent",
 							"thumbnails": {}
 						}
 					],
@@ -94,6 +96,16 @@
 									}
 								}
 							]
+						}
+					],
+					[
+						"tarjeta_link",
+						{
+							"__TYPE__": "LinkContent",
+							"value": {
+								"__TYPE__": "ExternalLink",
+								"url": "http://twitter.com"
+							}
 						}
 					]
 				]

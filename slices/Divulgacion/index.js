@@ -17,15 +17,17 @@ const Divulgacion = ({ slice }) => {
           <PrismicRichText field={slice.primary.descripcion} />
         </p>
         <div className="flex justify-around items-center mt-8">
-          <div className="hidden lg:block w-[540px] overflow-hidden rounded-lg hover:drop-shadow-2xl transform transition duration-500 hover:scale-105">
-            <PrismicNextImage field={slice.primary.tarjeta_imagen} className="h-72 object-cover rounded-t-lg w-full" />
-            <div className="bg-[#F0F0F0] text-black p-6">
-              <h3 className="text-2xl font-semibold mt-4"><PrismicRichText field={slice.primary.tarjeta_titulo} /></h3>
-              <p className="my-4">
-                <PrismicRichText field={slice.primary.tarjeta_texto} />
-              </p>
+          <PrismicNextLink field={slice.primary.tarjeta_link}>
+            <div className="hidden lg:block w-[540px] overflow-hidden rounded-lg hover:drop-shadow-2xl transform transition duration-500 hover:scale-105">
+              <PrismicNextImage field={slice.primary.tarjeta_imagen} className="h-72 object-cover rounded-t-lg w-full" />
+              <div className="bg-[#F0F0F0] text-black p-6">
+                <h3 className="text-2xl font-semibold mt-4"><PrismicRichText field={slice.primary.tarjeta_titulo} /></h3>
+                <p className="my-4">
+                  <PrismicRichText field={slice.primary.tarjeta_texto} />
+                </p>
+              </div>
             </div>
-          </div>
+          </PrismicNextLink>
           <div className="lg:mr-16">
             <h4 className="text-center text-3xl mb-8"><PrismicRichText field={slice.primary.titulo_actividades} /></h4>
             <div className="grid grid-cols-2 gap-8 mt-4 ">

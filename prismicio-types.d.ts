@@ -205,7 +205,8 @@ type PageDocumentDataSlicesSlice =
   | BlogSlice
   | DivulgacionSlice
   | InvestigacionSlice
-  | VecinosyAmigosSlice;
+  | VecinosyAmigosSlice
+  | ContenidoTextoSlice;
 /**
  * Page document from Prismic
  *
@@ -308,6 +309,88 @@ type BlogSliceVariation = BlogSliceDefault;
  */
 export type BlogSlice = prismic.SharedSlice<"blog", BlogSliceVariation>;
 /**
+ * Primary content in ContenidoTexto → Primary
+ *
+ */
+interface ContenidoTextoSliceDefaultPrimary {
+  /**
+   * Titulo field in *ContenidoTexto → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contenido_texto.primary.titulo
+   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+   *
+   */
+  titulo: prismic.RichTextField;
+}
+/**
+ * Item in ContenidoTexto → Items
+ *
+ */
+export interface ContenidoTextoSliceDefaultItem {
+  /**
+   * Subtitulo field in *ContenidoTexto → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contenido_texto.items[].subtitulo
+   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+   *
+   */
+  subtitulo: prismic.RichTextField;
+  /**
+   * Imagen field in *ContenidoTexto → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contenido_texto.items[].imagen
+   * - **Documentation**: https://prismic.io/docs/core-concepts/image
+   *
+   */
+  imagen: prismic.ImageField<never>;
+  /**
+   * Texto field in *ContenidoTexto → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contenido_texto.items[].texto
+   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+   *
+   */
+  texto: prismic.RichTextField;
+}
+/**
+ * Default variation for ContenidoTexto Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Default`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type ContenidoTextoSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ContenidoTextoSliceDefaultPrimary>,
+  Simplify<ContenidoTextoSliceDefaultItem>
+>;
+/**
+ * Slice variation for *ContenidoTexto*
+ *
+ */
+type ContenidoTextoSliceVariation = ContenidoTextoSliceDefault;
+/**
+ * ContenidoTexto Shared Slice
+ *
+ * - **API ID**: `contenido_texto`
+ * - **Description**: `ContenidoTexto`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type ContenidoTextoSlice = prismic.SharedSlice<
+  "contenido_texto",
+  ContenidoTextoSliceVariation
+>;
+/**
  * Primary content in Divulgacion → Primary
  *
  */
@@ -332,6 +415,16 @@ interface DivulgacionSliceDefaultPrimary {
    *
    */
   descripcion: prismic.RichTextField;
+  /**
+   * Tarjeta Link field in *Divulgacion → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: divulgacion.primary.tarjeta_link
+   * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+   *
+   */
+  tarjeta_link: prismic.LinkField;
   /**
    * Tarjeta Imagen field in *Divulgacion → Primary*
    *
@@ -718,6 +811,16 @@ export interface VecinosyAmigosSliceDefaultItem {
    *
    */
   tarjeta_subtexto: prismic.RichTextField;
+  /**
+   * Tarjeta Link field in *VecinosyAmigos → Items*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: vecinosy_amigos.items[].tarjeta_link
+   * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+   *
+   */
+  tarjeta_link: prismic.LinkField;
 }
 /**
  * Default variation for VecinosyAmigos Slice
@@ -773,6 +876,11 @@ declare module "@prismicio/client" {
       BlogSliceDefault,
       BlogSliceVariation,
       BlogSlice,
+      ContenidoTextoSliceDefaultPrimary,
+      ContenidoTextoSliceDefaultItem,
+      ContenidoTextoSliceDefault,
+      ContenidoTextoSliceVariation,
+      ContenidoTextoSlice,
       DivulgacionSliceDefaultPrimary,
       DivulgacionSliceDefaultItem,
       DivulgacionSliceDefault,

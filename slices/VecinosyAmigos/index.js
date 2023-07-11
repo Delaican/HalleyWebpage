@@ -1,6 +1,5 @@
-import { PrismicNextImage } from "@prismicio/next";
+import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import { PrismicRichText } from "@prismicio/react";
-import Image from "next/image";
 
 /**
  * @typedef {import("@prismicio/client").Content.VecinosyAmigosSlice} VecinosyAmigosSlice
@@ -23,19 +22,19 @@ const VecinosyAmigos = ({ slice }) => {
 
           {slice.items.map((tarjeta, index) =>
             <div key={index}>
-              <div className="h-[344px] w-[232px] rounded-lg drop-shadow-lg bg-white transform transition duration-500 hover:drop-shadow-2xl">
-                {/* <div> */}
-                <div className="p-4">
-                  <PrismicNextImage field={tarjeta.tarjeta_imagen} className="h-[216px] w-[205px] object-cover rounded-lg" />
+              <PrismicNextLink field={tarjeta.tarjeta_link}>
+                <div className="h-[344px] w-[232px] rounded-lg drop-shadow-lg bg-white transform transition duration-500 hover:drop-shadow-2xl">
+                  <div className="p-4">
+                    <PrismicNextImage field={tarjeta.tarjeta_imagen} className="h-[216px] w-[205px] object-cover rounded-lg" />
+                  </div>
+                  <div>
+                    <h2 className="mx-4 text-lg font-semibold">
+                      <PrismicRichText field={tarjeta.tarjeta_titulo} />
+                    </h2>
+                    <p className="ml-4 mt-2"><PrismicRichText field={tarjeta.tarjeta_texto} /></p>
+                  </div>
                 </div>
-                {/* </div> */}
-                <div>
-                  <h2 className="mx-4 text-lg font-semibold">
-                    <PrismicRichText field={tarjeta.tarjeta_titulo} />
-                  </h2>
-                  <p className="ml-4 mt-2"><PrismicRichText field={tarjeta.tarjeta_texto} /></p>
-                </div>
-              </div>
+              </PrismicNextLink>
               <p className="mt-8 text-lg text-center text-[#F68B1F]">
                 <PrismicRichText field={tarjeta.tarjeta_subtexto} />
               </p>
