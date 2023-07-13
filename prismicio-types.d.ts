@@ -280,6 +280,16 @@ export interface BlogSliceDefaultItem {
    *
    */
   tarjeta_texto: prismic.RichTextField;
+  /**
+   * Tarjeta Link field in *Blog → Items*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog.items[].tarjeta_link
+   * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+   *
+   */
+  tarjeta_link: prismic.LinkField;
 }
 /**
  * Default variation for Blog Slice

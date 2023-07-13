@@ -24,7 +24,7 @@ const Footer = () => {
             </form>
           </div>
         </div> */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-16 mx-auto justify-center items-center w-4/5 lg:py-8 text-sm lg:text-base">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-16 mx-auto justify-center items-center w-4/5 lg:py-16 py-8 text-sm lg:text-base">
           <div>
             <p className="font-bold">Correo</p>
             <p>halley@uis.edu.co</p>
