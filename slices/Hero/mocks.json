@@ -32,6 +32,16 @@
 							"__TYPE__": "ImageContent",
 							"thumbnails": {}
 						}
+					],
+					[
+						"herolink",
+						{
+							"__TYPE__": "LinkContent",
+							"value": {
+								"__TYPE__": "ExternalLink",
+								"url": "http://twitter.com"
+							}
+						}
 					]
 				]
 			}

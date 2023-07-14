@@ -7,7 +7,7 @@
  */
 
 import { useCallback } from "react";
-import { PrismicNextImage } from "@prismicio/next";
+import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import useEmblaCarousel from 'embla-carousel-react'
 
 const Hero = ({ slice }) => {
@@ -26,7 +26,9 @@ const Hero = ({ slice }) => {
       <div className="overflow-hidden" ref={emblaRef}>
         <div className="flex">
           {slice.items.map((imagen, index) => <div key={index} className="min-w-0 flex-[0_0_100%]">
-            <PrismicNextImage field={imagen.heroimage} className="object-cover block w-full h-[550px]" />
+          <PrismicNextLink field={imagen.herolink}>
+            <PrismicNextImage field={imagen.heroimage} className="object-cover w-full h-[550px]" />
+          </PrismicNextLink>
           </div>
           )}
         </div>

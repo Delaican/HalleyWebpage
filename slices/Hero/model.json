@@ -16,6 +16,10 @@
         "heroimage": {
           "type": "Image",
           "config": { "label": "HeroImage", "constraint": {}, "thumbnails": [] }
+        },
+        "herolink": {
+          "type": "Link",
+          "config": { "label": "HeroLink", "placeholder": "", "select": null }
         }
       }
     }

@@ -557,6 +557,16 @@ export interface HeroSliceDefaultItem {
    *
    */
   heroimage: prismic.ImageField<never>;
+  /**
+   * HeroLink field in *Hero → Items*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.items[].herolink
+   * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+   *
+   */
+  herolink: prismic.LinkField;
 }
 /**
  * Default variation for Hero Slice
