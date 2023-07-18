@@ -17,7 +17,7 @@ const ContenidoTexto = ({ slice }) => {
           <div key={index}>
             <h3 className="lg:text-4xl text-2xl font-semibold"><PrismicRichText field={item.subtitulo} /></h3>
             <figure className="my-8">
-              <PrismicNextImage field={item.imagen} className="lg:h-96 h-72 w-auto mx-auto" />
+              <PrismicNextImage field={item.imagen} className="object-contain h-72 mx-auto" />
               <figcaption className="text-center"><PrismicRichText field={item.imagen_caption} /></figcaption>
             </figure>
             <div>
