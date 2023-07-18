@@ -15,9 +15,9 @@ const ContenidoTexto = ({ slice }) => {
         </h2>
         {slice.items.map((item, index) =>
           <div key={index}>
-            <h3 className="mb-4 lg:text-4xl text-2xl font-semibold"><PrismicRichText field={item.subtitulo} /></h3>
-            <figure className="py-8">
-              <PrismicNextImage field={item.imagen} className="h-96 w-auto mx-auto" />
+            <h3 className="lg:text-4xl text-2xl font-semibold"><PrismicRichText field={item.subtitulo} /></h3>
+            <figure className="my-8">
+              <PrismicNextImage field={item.imagen} className="lg:h-96 h-72 w-auto mx-auto" />
               <figcaption className="text-center"><PrismicRichText field={item.imagen_caption} /></figcaption>
             </figure>
             <div>
