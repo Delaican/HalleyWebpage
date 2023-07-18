@@ -360,6 +360,16 @@ export interface ContenidoTextoSliceDefaultItem {
    */
   imagen: prismic.ImageField<never>;
   /**
+   * Imagen caption field in *ContenidoTexto → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contenido_texto.items[].imagen_caption
+   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+   *
+   */
+  imagen_caption: prismic.RichTextField;
+  /**
    * Texto field in *ContenidoTexto → Items*
    *
    * - **Field Type**: Rich Text
